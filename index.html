@@ -291,6 +291,21 @@ h1, h2, h3 { text-wrap: balance; }
 .foot .upd { margin-top: 14px; color: var(--c-on-ink); }
 .foot .tm { margin-top: 8px; color: var(--c-on-ink-2); font-size: 12px; line-height: 1.7; }
 
+/* スマホ: 上下の余白を詰め、駒の紹介は4枚にする */
+@media (max-width: 599px) {
+  .hero { padding-block: 20px 40px; }
+  .hero-in { gap: 16px; }
+  .sec { padding-block: 44px; }
+  .inner { gap: 24px; }
+  .mid-cta { margin-top: 36px; }
+  .combo-head { margin-bottom: 24px; }
+  .foe { padding-block: 44px; }
+  .end { padding-block: 52px; }
+  .end h2 { margin-bottom: 20px; }
+  .foot { padding-block: 28px max(28px, env(safe-area-inset-bottom, 0px)); }
+  .cards .card:not(.m) { display: none; }
+}
+
 /* 1列のままのタブレット幅: 盤を画面の高さに合わせ、バッジを1画面目に入れる */
 @media (min-width: 600px) and (max-width: 1099px) {
   .hb-fig { max-width: calc(min(560px, 42vh) + 36px); }
@@ -470,7 +485,7 @@ h1, h2, h3 { text-wrap: balance; }
         <button class="reroll" id="reroll" type="button" aria-controls="cards"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4.5h-4.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>別の駒を見る</button>
       </div>
       <ul class="cards" id="cards">
-        <li class="card" data-name="騎馬"><span class="rar"><i style="background:var(--c-r-n)"></i>コモン</span><div class="mv"></div><h3>騎馬</h3><span class="st">攻1 防0 体1</span><p>チェスのナイト。成ると防御力が1上がる。</p></li><li class="card" data-name="砲台"><span class="rar"><i style="background:var(--c-r-n)"></i>コモン</span><div class="mv"></div><h3>砲台</h3><span class="st">攻0 防1 体1</span><p>動けない。<span class="nw">毎ターン終わりに、</span>前が空いていれば香車を生む。</p></li><li class="card" data-name="寄生"><span class="rar"><i style="background:var(--c-r-n)"></i>コモン</span><div class="mv"></div><h3>寄生</h3><span class="st">攻0 防0 体1</span><p>攻撃した相手に<span class="nw">取り付き、</span><span class="nw">意のままに</span>操る。</p></li><li class="card" data-name="聖剣"><span class="rar"><i style="background:var(--c-r-r)"></i>レア</span><div class="mv"></div><h3>聖剣</h3><span class="st">攻99 防0 体1</span><p>攻撃力が、99。</p></li><li class="card" data-name="自爆"><span class="rar"><i style="background:var(--c-r-r)"></i>レア</span><div class="mv"></div><h3>自爆</h3><span class="st">攻3 防0 体1</span><p>動いた後に死ぬ。倒れると、周りの駒をすべて破壊する。</p></li><li class="card" data-name="増殖"><span class="rar"><i style="background:var(--c-r-sr)"></i>ゴールドレア</span><div class="mv"></div><h3>増殖</h3><span class="st">攻1 防0 体1</span><p>毎ターン勝手に動き、周りの3か所に増殖を生む。<span class="nw">成ると死ぬ。</span></p></li><li class="card" data-name="女王"><span class="rar"><i style="background:var(--c-r-sr)"></i>ゴールドレア</span><div class="mv"></div><h3>女王</h3><span class="st">攻2 防0 体1</span><p>チェスのクイーン。成ると女帝になる。</p></li><li class="card" data-name="希望"><span class="rar"><i style="background:linear-gradient(135deg,var(--c-s1),var(--c-s2),var(--c-s3),var(--c-s4),var(--c-s5))"></i>シークレットレア</span><div class="mv"></div><h3>希望</h3><span class="st">攻0 防0 体1</span><p>ただ耐えろ。<span class="nw">その先に、</span>きっと希望が待っている。</p></li>
+        <li class="card m" data-name="騎馬"><span class="rar"><i style="background:var(--c-r-n)"></i>コモン</span><div class="mv"></div><h3>騎馬</h3><span class="st">攻1 防0 体1</span><p>チェスのナイト。成ると防御力が1上がる。</p></li><li class="card" data-name="砲台"><span class="rar"><i style="background:var(--c-r-n)"></i>コモン</span><div class="mv"></div><h3>砲台</h3><span class="st">攻0 防1 体1</span><p>動けない。<span class="nw">毎ターン終わりに、</span>前が空いていれば香車を生む。</p></li><li class="card" data-name="寄生"><span class="rar"><i style="background:var(--c-r-n)"></i>コモン</span><div class="mv"></div><h3>寄生</h3><span class="st">攻0 防0 体1</span><p>攻撃した相手に<span class="nw">取り付き、</span><span class="nw">意のままに</span>操る。</p></li><li class="card m" data-name="聖剣"><span class="rar"><i style="background:var(--c-r-r)"></i>レア</span><div class="mv"></div><h3>聖剣</h3><span class="st">攻99 防0 体1</span><p>攻撃力が、99。</p></li><li class="card" data-name="自爆"><span class="rar"><i style="background:var(--c-r-r)"></i>レア</span><div class="mv"></div><h3>自爆</h3><span class="st">攻3 防0 体1</span><p>動いた後に死ぬ。倒れると、周りの駒をすべて破壊する。</p></li><li class="card m" data-name="増殖"><span class="rar"><i style="background:var(--c-r-sr)"></i>ゴールドレア</span><div class="mv"></div><h3>増殖</h3><span class="st">攻1 防0 体1</span><p>毎ターン勝手に動き、周りの3か所に<span class="nw">増殖を生む。</span><span class="nw">成ると死ぬ。</span></p></li><li class="card" data-name="女王"><span class="rar"><i style="background:var(--c-r-sr)"></i>ゴールドレア</span><div class="mv"></div><h3>女王</h3><span class="st">攻2 防0 体1</span><p>チェスのクイーン。成ると女帝になる。</p></li><li class="card m" data-name="希望"><span class="rar"><i style="background:linear-gradient(135deg,var(--c-s1),var(--c-s2),var(--c-s3),var(--c-s4),var(--c-s5))"></i>シークレットレア</span><div class="mv"></div><h3>希望</h3><span class="st">攻0 防0 体1</span><p>ただ耐えろ。<span class="nw">その先に、</span>きっと希望が待っている。</p></li>
       </ul>
       <div class="mid-cta">
         <div class="badges" role="group" aria-label="ダウンロード"><a class="badge" href="https://apps.apple.com/jp/app/id6738020642" target="_blank" rel="noopener"><img src="assets/appstore-ja-jp.svg" width="131" height="48" alt="App Store からダウンロード"></a><a class="badge" href="https://play.google.com/store/apps/details?id=com.anchuuuuuuuu.shogi" target="_blank" rel="noopener"><img src="assets/googleplay-ja.png" width="161" height="48" alt="Google Play で手に入れよう"></a></div>
@@ -570,7 +585,7 @@ h1, h2, h3 { text-wrap: balance; }
     "罠師": { r: "R", a: 1, d: 0, h: 1, m: K8, fx: NW("毎ターン終わりに、") + "周りに地雷を1つ置く。" },
     "厩舎": { r: "R", a: 0, d: 2, h: 1, m: "", fx: "動けない。2ターンごとに、周りに暴馬を生む。" },
     "自爆": { r: "R", a: 3, d: 0, h: 1, m: "2:0,1", fx: "動いた後に死ぬ。倒れると、周りの駒をすべて破壊する。" },
-    "増殖": { r: "SR", a: 1, d: 0, h: 1, m: "0:1,2 0:-1,2 0:2,1 0:-2,1", fx: "毎ターン勝手に動き、周りの3か所に増殖を生む。" + NW("成ると死ぬ。") },
+    "増殖": { r: "SR", a: 1, d: 0, h: 1, m: "0:1,2 0:-1,2 0:2,1 0:-2,1", fx: "毎ターン勝手に動き、周りの3か所に" + NW("増殖を生む。") + NW("成ると死ぬ。") },
     "腐敗": { r: "SR", a: 1, d: 0, h: 1, m: "0:0,1", fx: "毎ターン1マス進み、周りの敵を1つ腐敗に変える。" },
     "女王": { r: "SR", a: 2, d: 0, h: 1, m: ROOK + " " + BISHOP, fx: "チェスのクイーン。成ると女帝になる。" },
     "墨子": { r: "SR", a: 1, d: 2, h: 1, m: K8, fx: "戦闘開始時、自軍の歩兵を盾兵に変え、王城の" + NW("防御力を+1する。") },
@@ -672,16 +687,22 @@ h1, h2, h3 { text-wrap: balance; }
   }
   Array.prototype.forEach.call(document.querySelectorAll(".card"), function (c) { c.querySelector(".mv").innerHTML = mvSvg(c.getAttribute("data-name")); });
   var POOL = ["怨霊", "輪廻", "砲台", "大工", "教師", "人柱", "福袋", "騎馬", "司教", "寄生", "張飛", "張角", "聖剣", "邪剣", "魔女", "城塞", "罠師", "厩舎", "自爆", "増殖", "腐敗", "女王", "墨子", "洗脳", "希望", "審判"];
-  var ORDER = { N: 0, R: 1, SR: 2, S: 3 }, cardsEl = document.getElementById("cards");
+  var SP = window.matchMedia("(max-width: 599px)"), ORDER = { N: 0, R: 1, SR: 2, S: 3 }, cardsEl = document.getElementById("cards");
   function cardHtml(name) {
     var p = P[name], rar = RAR[p.r];
-    return '<li class="card" data-name="' + name + '"><span class="rar"><i style="background:' + rar[1] + '"></i>' + rar[0] + '</span><div class="mv">' + mvSvg(name) + '</div><h3>' + name + '</h3><span class="st">攻' + p.a + ' 防' + p.d + ' 体' + p.h + '</span><p>' + p.fx + '</p></li>';
+    return '<li class="card m" data-name="' + name + '"><span class="rar"><i style="background:' + rar[1] + '"></i>' + rar[0] + '</span><div class="mv">' + mvSvg(name) + '</div><h3>' + name + '</h3><span class="st">攻' + p.a + ' 防' + p.d + ' 体' + p.h + '</span><p>' + p.fx + '</p></li>';
   }
   document.getElementById("reroll").addEventListener("click", function () {
-    var now = Array.prototype.map.call(cardsEl.querySelectorAll(".card"), function (c) { return c.getAttribute("data-name"); });
+    var sp = SP.matches;
+    var now = Array.prototype.map.call(cardsEl.querySelectorAll(sp ? ".card.m" : ".card"), function (c) { return c.getAttribute("data-name"); });
     var c = POOL.filter(function (n) { return now.indexOf(n) < 0; });
     for (var i = c.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = c[i]; c[i] = c[j]; c[j] = t; }
-    var pick = c.slice(0, 8).sort(function (a, b) { return ORDER[P[a].r] - ORDER[P[b].r]; });
+    var pick = c.slice(0, 8);
+    if (sp) {
+      pick = [["N"], ["R"], ["SR", "S"]].map(function (g) { return c.filter(function (n) { return g.indexOf(P[n].r) >= 0; })[0]; });
+      pick.push(c.filter(function (n) { return pick.indexOf(n) < 0; })[0]);
+    }
+    pick = pick.sort(function (a, b) { return ORDER[P[a].r] - ORDER[P[b].r]; });
     cardsEl.classList.remove("fresh"); void cardsEl.offsetWidth;
     cardsEl.innerHTML = pick.map(cardHtml).join("");
     cardsEl.classList.add("fresh");
